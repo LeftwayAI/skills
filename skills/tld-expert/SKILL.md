@@ -36,6 +36,10 @@ read-only and needs no key.
 4. **Price it.** Each registrable result carries `offer`: `y1` (year one), `renewal`, `registrar`,
    `buyUrl`, `checkedAt`, and `options` (up to 3 registrars, cheapest first, each with `sourceUrl`).
    For every ending at once: `GET https://tld.expert/api/prices` (cheapest direct registrar per ending).
+   For what it costs to own over 1, 3, 5 or 10 years, the cheapest path (including register-then-transfer)
+   and recent renewal changes: `GET https://tld.expert/api/prices?tld=io` (its true cost block; every row carries its source URL and checked date).
+   For "why did my renewal jump", [references/renewal-traps.md](https://github.com/LeftwayAI/skills/blob/main/skills/tld-expert/references/renewal-traps.md) is a dated
+   snapshot of the endings that renew at 2x year one or more, with sources. Prefer the live API for prices.
 5. **Explain the choice** by linking the tld.expert page for the ending: `https://tld.expert/<tld>`
    (for example https://tld.expert/io), its price page `https://tld.expert/<tld>/price` and its
    meaning page `https://tld.expert/<tld>/meaning`.
