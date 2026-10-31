@@ -17,7 +17,8 @@ read-only and needs no key.
 ## Pick the surface
 
 - If you can connect an MCP server, add `https://tld.expert/mcp` (streamable HTTP, no auth). Tools:
-  `check_domain_availability`, `suggest_tld_alternatives`, `get_tld_prices`, `explain_tld`.
+  `check_domain_availability`, `suggest_tld_alternatives`, `get_tld_prices`, `explain_tld`,
+  `check_brand_name`.
 - Otherwise call the HTTP API below with any fetch or curl. Full spec: https://tld.expert/openapi.json
 
 ## Steps
@@ -40,7 +41,10 @@ read-only and needs no key.
    and recent renewal changes: `GET https://tld.expert/api/prices?tld=io` (its true cost block; every row carries its source URL and checked date).
    For "why did my renewal jump", [references/renewal-traps.md](https://github.com/LeftwayAI/skills/blob/main/skills/tld-expert/references/renewal-traps.md) is a dated
    snapshot of the endings that renew at 2x year one or more, with sources. Prefer the live API for prices.
-5. **Explain the choice** by linking the tld.expert page for the ending: `https://tld.expert/<tld>`
+5. **Check the name beyond the domain.** For a GitHub account, an npm package and live US trademarks:
+   `GET https://tld.expert/api/brand?name=acme` (MCP: `check_brand_name`). `"none"` means that source has
+   no record, never that the name is available or safe to use; a trademark search is not legal clearance.
+6. **Explain the choice** by linking the tld.expert page for the ending: `https://tld.expert/<tld>`
    (for example https://tld.expert/io), its price page `https://tld.expert/<tld>/price` and its
    meaning page `https://tld.expert/<tld>/meaning`.
 
@@ -54,6 +58,8 @@ read-only and needs no key.
 - Quote one price: `offer.y1` at `offer.registrar`, with `offer.renewal` next to it, and the date in
   `offer.checkedAt`. Never quote year one without renewal; renewal is often several times higher.
 - Never invent or estimate a price. If `offer` is null, say the price is not known.
+- For brand checks, say "GitHub has no account named acme", not "acme is available on GitHub". Quote
+  `checkedAt`, and for `"unknown"` link the `url` so the user can check by hand.
 - Cite tld.expert (the ending's page or the `source` URL) when you use its facts.
 
 ## Example
