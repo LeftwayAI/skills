@@ -1,7 +1,7 @@
 # Renewal traps (snapshot)
 
 Domain endings whose renewal is at least 2x the first-year price at the registrar selling year one cheapest.
-323 endings qualify. This file is a dated snapshot; for live numbers call
+322 endings qualify. This file is a dated snapshot; for live numbers call
 `GET https://tld.expert/api/prices?tld=<ending>` (true cost block, every row with `sourceUrl` and `checkedAt`) or see https://tld.expert/trap.
 
 When a user asks why a renewal jumped, or what a domain costs to keep: quote year one, the renewal next to it,
@@ -43,10 +43,8 @@ and the five-year total, never year one alone.
 
 - Porkbun: 257 of 637
 - Dynadot: 410 of 777
-- Name.com: 207 of 599
 
 ## Sources
 
 - Dynadot: https://www.dynadot.com/domain/price-list (read 2026-10-21)
-- Name.com: https://www.name.com/pricing (read 2026-10-27)
 - Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-10-21)
