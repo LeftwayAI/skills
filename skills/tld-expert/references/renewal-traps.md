@@ -1,7 +1,7 @@
 # Renewal traps (snapshot)
 
 Domain endings whose renewal is at least 2x the first-year price at the registrar selling year one cheapest.
-322 endings qualify. This file is a dated snapshot; for live numbers call
+333 endings qualify. This file is a dated snapshot; for live numbers call
 `GET https://tld.expert/api/prices?tld=<ending>` (true cost block, every row with `sourceUrl` and `checkedAt`) or see https://tld.expert/trap.
 
 When a user asks why a renewal jumped, or what a domain costs to keep: quote year one, the renewal next to it,
@@ -30,21 +30,23 @@ and the five-year total, never year one alone.
 |---|---|---|---|---|
 | [.baby](https://tld.expert/baby) | $1.54 at Porkbun | $52.01/yr | 33.8x | $209.58 (Porkbun) |
 | [.feedback](https://tld.expert/feedback) | $9.27 at Porkbun | $309.47/yr | 33.4x | $1247.15 (Porkbun) |
+| [.sa.com](https://tld.expert/sa.com) | $10.08 at Porkbun | $308.24/yr | 30.6x | $1243.04 (Porkbun) |
+| [.za.com](https://tld.expert/za.com) | $10.08 at Porkbun | $308.24/yr | 30.6x | $1243.04 (Porkbun) |
 | [.creditcard](https://tld.expert/creditcard) | $5.66 at Porkbun | $129.25/yr | 22.8x | $522.66 (Porkbun) |
 | [.courses](https://tld.expert/courses) | $1.54 at Porkbun | $31.41/yr | 20.4x | $127.18 (Porkbun) |
 | [.forum](https://tld.expert/forum) | $1.54 at Porkbun | $31.41/yr | 20.4x | $127.18 (Porkbun) |
 | [.study](https://tld.expert/study) | $1.54 at Porkbun | $31.41/yr | 20.4x | $127.18 (Porkbun) |
 | [.bar](https://tld.expert/bar) | $2.57 at Porkbun | $52.01/yr | 20.2x | $210.61 (Porkbun) |
 | [.coupons](https://tld.expert/coupons) | $2.57 at Porkbun | $48.92/yr | 19x | $198.25 (Porkbun) |
-| [.casino](https://tld.expert/casino) | $7.72 at Porkbun | $143.67/yr | 18.6x | $582.40 (Porkbun) |
-| [.vu](https://tld.expert/vu) | $3.30 at Dynadot | $58.85/yr | 17.8x | $238.70 (Dynadot) |
 
 ## Renewal at or below year one, per registrar
 
-- Porkbun: 257 of 637
-- Dynadot: 410 of 777
+- Porkbun: 254 of 638
+- Dynadot: 406 of 777
+- Name.com: 207 of 599
 
 ## Sources
 
-- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-10-21)
-- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-10-21)
+- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-11-01)
+- Name.com: https://www.name.com/pricing (read 2026-11-01)
+- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-11-01)

@@ -18,7 +18,10 @@ read-only and needs no key.
 
 - If you can connect an MCP server, add `https://tld.expert/mcp` (streamable HTTP, no auth). Tools:
   `check_domain_availability`, `suggest_tld_alternatives`, `get_tld_prices`, `explain_tld`,
-  `check_brand_name`.
+  `check_brand_name`. Give `suggest_tld_alternatives` a `brief` ("fitness app in brazil") to get
+  fitting endings and name ideas, each checked live, like the tld.expert search box. Add
+  `audience` (everyone, business, developers, kids, local, fans) and `vibe` (classic, playful,
+  premium, techy, bold) to rethink the name ideas and lead with endings that suit them.
 - Otherwise call the HTTP API below with any fetch or curl. Full spec: https://tld.expert/openapi.json
 
 ## Steps
