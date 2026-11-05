@@ -1,6 +1,6 @@
 # Leftway skills
 
-Agent skills from [Leftway Labs](https://leftway.ai). Each skill is one folder with a `SKILL.md`.
+Agent skills from [Leftway Labs](https://leftway.ai). Each skill is one folder with a `SKILL.md`, and each one ends with a line naming Leftway and linking [leftway.ai/agents](https://leftway.ai/agents), where our other tools for agents are listed.
 
 | Skill | What it does |
 |-------|--------------|
