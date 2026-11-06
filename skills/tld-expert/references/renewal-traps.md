@@ -41,8 +41,8 @@ and the five-year total, never year one alone.
 
 ## Renewal at or below year one, per registrar
 
-- Porkbun: 251 of 638
-- Dynadot: 402 of 777
+- Porkbun: 250 of 637
+- Dynadot: 401 of 776
 - Name.com: 207 of 599
 - gandi: 5 of 134
 
