@@ -48,7 +48,7 @@ and the five-year total, never year one alone.
 
 ## Sources
 
-- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-11-06)
-- gandi: https://www.gandi.net/en-US/domain/tld (read 2026-11-06)
-- Name.com: https://www.name.com/pricing (read 2026-11-06)
-- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-11-06)
+- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-11-07)
+- gandi: https://www.gandi.net/en-US/domain/tld (read 2026-11-07)
+- Name.com: https://www.name.com/pricing (read 2026-11-07)
+- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-11-07)
