@@ -41,14 +41,14 @@ and the five-year total, never year one alone.
 
 ## Renewal at or below year one, per registrar
 
-- Porkbun: 251 of 637
-- Dynadot: 401 of 776
+- Porkbun: 249 of 637
+- Dynadot: 400 of 776
 - Name.com: 207 of 599
 - gandi: 5 of 134
 
 ## Sources
 
-- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-11-09)
-- gandi: https://www.gandi.net/en-US/domain/tld (read 2026-11-09)
-- Name.com: https://www.name.com/pricing (read 2026-11-09)
-- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-11-09)
+- Dynadot: https://www.dynadot.com/domain/price-list (read 2026-11-10)
+- gandi: https://www.gandi.net/en-US/domain/tld (read 2026-11-10)
+- Name.com: https://www.name.com/pricing (read 2026-11-10)
+- Porkbun: https://api.porkbun.com/api/json/v3/pricing/get (read 2026-11-10)
