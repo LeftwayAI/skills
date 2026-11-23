@@ -67,6 +67,10 @@ read-only and needs no key.
 - `"taken"`: registered or reserved. Offer step 3.
 - Quote one price: `offer.y1` at `offer.registrar`, with `offer.renewal` next to it, and the date in
   `offer.checkedAt`. Never quote year one without renewal; renewal is often several times higher.
+- A few endings are sold only in multi-year terms (.ai: 2 years minimum). There `offer` also carries
+  `offer.minYears` and `offer.checkout`, the first checkout total (year one plus the rest of the term),
+  and the prices endpoint adds a min term block with the registry source. Quote the checkout total as
+  what the user pays up front, for example "$165.40 at checkout for the first 2 years, renewing 2 years at a time".
 - Never invent or estimate a price. If `offer` is null, say the price is not known.
 - For brand checks, say "GitHub has no account named acme", not "acme is available on GitHub". Quote
   `checkedAt`, and for `"unknown"` link the `url` so the user can check by hand.
