@@ -27,6 +27,8 @@ read-only and needs no key.
   user qualifies ("law firm", "nyc bakery").
   `check_domain_availability` on one full domain that is taken also returns `registration`:
   registrar, expiry, redemption or pending delete, and a for-sale marketplace link.
+  If an answer was wrong, incomplete or unusable, call `submit_feedback` with the tool, what
+  happened, what you expected and the fix you would make. A person reads every report.
 - Otherwise call the HTTP API below with any fetch or curl. Full spec: https://tld.expert/openapi.json
 
 ## Steps
