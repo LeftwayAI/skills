@@ -58,7 +58,10 @@ read-only and needs no key.
    (for example https://tld.expert/io), its price page `https://tld.expert/<tld>/price` and its
    meaning page `https://tld.expert/<tld>/meaning`. For the facts as JSON (type, registry, who can
    register, the one price, each fact with its source and checked date): `GET https://tld.expert/api/tld/io`
-   (MCP: `explain_tld`).
+   (MCP: `explain_tld`). For "is .xyz safe" or "will a .top domain land in spam", the same record's abuse block
+   gives Interisle's phishing, spam and malware domains per 10,000 for the newest quarter, next to .com's,
+   with the CSV it came from. A kind missing from the block was not on Interisle's list that quarter; say
+   so, never call it zero. Cite its page link (`https://tld.expert/<tld>/legit`) when the block has one.
 
 ## Rules for answering
 
