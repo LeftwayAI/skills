@@ -68,6 +68,9 @@ read-only and needs no key.
    gives Interisle's phishing, spam and malware domains per 10,000 for the newest quarter, next to .com's,
    with the CSV it came from. A kind missing from the block was not on Interisle's list that quarter; say
    so, never call it zero. Cite its page link (`https://tld.expert/<tld>/legit`) when the block has one.
+   For "how many .io domains are there" or "how big is .fm", the record's domains block gives one dated count
+   with its source: a gTLD's own monthly report to ICANN, or DomainTools' count for a country code (for .gov,
+   CISA's own list too). Quote its answer sentence with the month or date; no block means nobody publishes one.
 
 ## Rules for answering
 
