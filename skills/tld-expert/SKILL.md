@@ -51,6 +51,12 @@ read-only and needs no key.
    and recent renewal changes: `GET https://tld.expert/api/prices?tld=io` (its true cost block; every row carries its source URL and checked date).
    For "why did my renewal jump", [references/renewal-traps.md](https://github.com/LeftwayAI/skills/blob/main/skills/tld-expert/references/renewal-traps.md) is a dated
    snapshot of the endings that renew at 2x year one or more, with sources. Prefer the live API for prices.
+   For "can the registry raise my renewal price" on a gTLD (.xyz, .shop, .app), the renewal rules block on
+   `GET https://tld.expert/api/tld/xyz` (and on the prices answer) quotes section 2.10 of that ending's own ICANN
+   registry agreement: 180 days' notice to registrars before a registry renewal increase, renewals of 1 to 10
+   years at the current price until then, and one renewal price for every standard name (only a name sold with
+   a disclosed higher renewal, like a premium, can cost more). It binds the registry's wholesale price, not the
+   registrar's markup. No block (.com, .net, every country ending) means no such rule is on file; say that.
 5. **Check the name beyond the domain.** For a GitHub account, an npm package and live US trademarks:
    `GET https://tld.expert/api/brand?name=acme` (MCP: `check_brand_name`). `"none"` means that source has
    no record, never that the name is available or safe to use; a trademark search is not legal clearance.
