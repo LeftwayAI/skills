@@ -56,7 +56,9 @@ read-only and needs no key.
    no record, never that the name is available or safe to use; a trademark search is not legal clearance.
 6. **Explain the choice** by linking the tld.expert page for the ending: `https://tld.expert/<tld>`
    (for example https://tld.expert/io), its price page `https://tld.expert/<tld>/price` and its
-   meaning page `https://tld.expert/<tld>/meaning`.
+   meaning page `https://tld.expert/<tld>/meaning`. For the facts as JSON (type, registry, who can
+   register, the one price, each fact with its source and checked date): `GET https://tld.expert/api/tld/io`
+   (MCP: `explain_tld`).
 
 ## Rules for answering
 
