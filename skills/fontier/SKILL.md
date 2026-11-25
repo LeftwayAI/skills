@@ -58,8 +58,10 @@ answer quotes the licence's own lines on logos and on trademarks, or says the li
    (geometric, humanist, grotesque, slab, didone, handwritten, art deco). If `match.all` is false, no font
    matched every word and the list is the closest: drop a word or say it is a near match.
 3. **Pair them.** `GET https://fontier.ai/api/pairings/<slug>` (MCP: `pair_fonts`) lists the fonts real
-   websites load with one, counted on a crawl of the top 25,000 home pages, with example sites, each
-   partner's licence answers and the size that lines up both x-heights. Hand-reviewed fonts also carry
+   websites load with one, counted on a crawl of the top 100,000 home pages, with example sites, each
+   partner's licence answers and the size that lines up both x-heights. System fonts (Times New Roman,
+   Arial, Georgia, Calibri) are never downloaded, so theirs count the pages naming them first in CSS
+   (`signal: "named first in CSS"`). Hand-reviewed fonts also carry
    `pairings` with a reason on `GET https://fontier.ai/api/fonts/<slug>` (MCP: `get_font`).
    Asked for something like a paid font: `GET https://fontier.ai/api/fonts-like/<helvetica|futura|...>`
    ranks open fonts by measured cap height, x-height, width and stem.
