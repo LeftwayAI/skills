@@ -1,6 +1,6 @@
 ---
 name: fontier
-description: Use when building a web page, landing page, site, app or brand, to choose its fonts and check that each font's licence allows that exact use, with fontier.ai's free data on every open-licence font family (no key). Also use when asked which font to use or what pairs with one, for a free alternative to a paid font like Helvetica or Futura, or whether a font is free for commercial, web or app use.
+description: Use when building a web page, landing page, site, app or brand, to choose its fonts and check that each font's licence allows that exact use, with fontier.ai's free data on every open-licence font family (no key). Also use when asked which font to use or what pairs with one, for the best fonts for a resume, tattoo, logo, wedding or handwriting, whether a font can set a logo you can trademark, for a free alternative to a paid font like Helvetica or Futura, or whether a font is free for commercial, web or app use.
 license: CC-BY-4.0
 metadata:
   homepage: https://fontier.ai
@@ -27,10 +27,13 @@ The five uses:
 A yes for one use says nothing about another. Satoshi is a yes for web and app, but a no for `platform` and
 `modify`: its licence bans subsetting and converting the files.
 
+One more question, `logo`: can it set a logo or wordmark, and can you own and register that logo? The
+answer quotes the licence's own lines on logos and on trademarks, or says the licence is silent on them.
+
 ## Pick the surface
 
 - If you can connect an MCP server, add `https://fontier.ai/mcp` (streamable HTTP, no auth). Tools:
-  `search_fonts`, `get_font`, `check_font_license`, `pair_fonts`.
+  `search_fonts`, `get_font`, `check_font_license`, `pair_fonts`, `best_fonts_for_use`.
 - Otherwise call the HTTP API below with any fetch or curl. Every response is JSON with CORS open.
 
 ## Steps
@@ -39,7 +42,14 @@ A yes for one use says nothing about another. Satoshi is a yes for web and app, 
    `web`. An app that ships the font file is `app` (plus `commercial` if it is sold or makes money). A
    logo, brand or print piece is `commercial`. A product where users choose fonts is `platform`. A build
    step that subsets or converts font files (to WOFF2, or to a smaller character set) also needs `modify`.
+   A logo or wordmark also needs `logo`.
    If the use changes the pick and you can't tell, ask one question; for a site, assume `commercial,web`.
+   Asked for the best fonts for a resume, tattoo, logo, wedding or handwriting? Start from the ranked list:
+   `GET https://fontier.ai/api/uses/<resume|tattoo|logo|wedding|handwriting>` (MCP: `best_fonts_for_use`)
+   returns our picks with why, then the most used fonts of each style, each a plain yes for commercial use,
+   measured for that use: characters per line at 11 pt for a resume, stroke at 1 cm capitals for a tattoo
+   or an invitation, stroke at favicon size and how many top sites load it for a logo. The logo record also
+   quotes every licence's logo and trademark lines. Add `limit` for longer lists.
 2. **Find candidates that are a plain yes for that use.** Describe the mood or job in `q`:
    `GET https://fontier.ai/api/fonts?q=warm+editorial+serif&uses=commercial,web&limit=10`
    (MCP: `search_fonts` with `uses`). Add `category` (sans, serif, mono, display, handwriting). For the
@@ -55,7 +65,9 @@ A yes for one use says nothing about another. Satoshi is a yes for web and app, 
    ranks open fonts by measured cap height, x-height, width and stem.
 4. **Check every pick for the exact use**, even if search already filtered on it, so you can quote it:
    `GET https://fontier.ai/api/license?font=<slug>&use=<use>` (MCP: `check_font_license`; omit `use`
-   for all five). Read `answer`, `conditions`, `quote`, `license`, `source`, `licenseSha256` and `checkedAt`.
+   for all of them). Read `answer`, `conditions`, `quote`, `license`, `source`, `licenseSha256` and `checkedAt`.
+   For `use=logo`, also read `quotes`, `trademarkQuote` (or `trademarkNote` when the licence is silent) and
+   `quotesCheckedIn`, the licence file the quotes were found in, by sha256.
 5. **Load it the way its licence allows.** Use the `css` URL from the record (the font's own CDN). For
    a fallback that doesn't shift the layout while the font loads, `get_font` returns `facts.fallback`:
 
@@ -78,7 +90,9 @@ A yes for one use says nothing about another. Satoshi is a yes for web and app, 
 - `"no"`: don't use it for that. Offer a font that is a yes.
 - `"unknown"`: its licence text matched no licence Fontier could verify. Never call it free. Pick
   another font, or tell the user to read the licence at `source` themselves.
-- Never infer one use from another: commercial yes does not mean web or app yes.
+- Never infer one use from another: commercial yes does not mean web or app yes, and neither means `logo`.
+- For a logo, say who owns it and whether the licence speaks to registering it: quote `trademarkQuote`, or
+  say the licence says nothing about trademarks.
 - If `modify` is `"no"`, don't subset, convert or otherwise change its files, and don't run them through a
   tool that does. Load them as the foundry ships them.
 - For each pick, tell the user: the font, the answer for their use, the licence, the source URL and the
