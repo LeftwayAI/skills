@@ -79,6 +79,9 @@ read-only and needs no key.
 - `"likely"` or `"unknown"`: do not call it available. Say it could not be confirmed and link `buyUrl`
   or the registrar to check. If `retry` is true, ask again once after a few seconds.
 - `"taken"`: registered or reserved. Offer step 3.
+- `"restricted"`: the ending is in a launch period where its registry sells only through one route
+  (.pay through PayPal Business until February 1, 2027). Say who may register and where, link the
+  route's url from the registration_route block and cite its source_url. Never send the user to a registrar.
 - Quote one price: `offer.y1` at `offer.registrar`, with `offer.renewal` next to it, and the date in
   `offer.checkedAt`. Never quote year one without renewal; renewal is often several times higher.
 - A few endings are sold only in multi-year terms (.ai: 2 years minimum). There `offer` also carries
