@@ -1,6 +1,6 @@
 ---
 name: fontier
-description: Use when building a web page, landing page, site, app or brand, to choose its fonts and check that each font's licence allows that exact use, with fontier.ai's free data on every open-licence font family (no key). Also use when asked which font to use or what pairs with one, for the best fonts for a resume, tattoo, logo, wedding or handwriting, whether a font can set a logo you can trademark, for a free alternative to a paid font like Helvetica or Futura, or whether a font is free for commercial, web or app use.
+description: Use when building a web page, landing page, site, app or brand, to choose its fonts and check that each font's licence allows that exact use, with fontier.ai's free data on every open-licence font family (no key). Also use when asked which font to use or what pairs with one, for the best fonts for a resume, tattoo, logo, wedding, handwriting, an email or a reader with dyslexia, whether a font can set a logo you can trademark, for a free alternative to a paid font like Helvetica or Futura, or whether a font is free for commercial, web or app use.
 license: CC-BY-4.0
 metadata:
   homepage: https://fontier.ai
@@ -44,12 +44,16 @@ answer quotes the licence's own lines on logos and on trademarks, or says the li
    step that subsets or converts font files (to WOFF2, or to a smaller character set) also needs `modify`.
    A logo or wordmark also needs `logo`.
    If the use changes the pick and you can't tell, ask one question; for a site, assume `commercial,web`.
-   Asked for the best fonts for a resume, tattoo, logo, wedding or handwriting? Start from the ranked list:
-   `GET https://fontier.ai/api/uses/<resume|tattoo|logo|wedding|handwriting>` (MCP: `best_fonts_for_use`)
+   Asked for the best fonts for a resume, tattoo, logo, wedding, handwriting, email or dyslexia? Start from the
+   ranked list: `GET https://fontier.ai/api/uses/<resume|tattoo|logo|wedding|handwriting|email|dyslexia>` (MCP: `best_fonts_for_use`)
    returns our picks with why, then the most used fonts of each style, each a plain yes for commercial use,
    measured for that use: characters per line at 11 pt for a resume, stroke at 1 cm capitals for a tattoo
    or an invitation, stroke at favicon size and how many top sites load it for a logo. The logo record also
-   quotes every licence's logo and trademark lines. Add `limit` for longer lists.
+   quotes every licence's logo and trademark lines. The email record says which email apps show a webfont
+   and how far each font's text moves when the rest show Arial or Georgia, with the stack to paste; the
+   dyslexia record quotes the reading studies (special dyslexia fonts read no better than Arial; more space
+   between letters helped) and gives each font's measured spacing and the CSS letter-spacing to add.
+   Add `limit` for longer lists.
 2. **Find candidates that are a plain yes for that use.** Describe the mood or job in `q`:
    `GET https://fontier.ai/api/fonts?q=warm+editorial+serif&uses=commercial,web&limit=10`
    (MCP: `search_fonts` with `uses`). Add `category` (sans, serif, mono, display, handwriting). For the
