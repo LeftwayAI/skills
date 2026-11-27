@@ -113,6 +113,9 @@ year (checked 2026-10-21). Source: tld.expert/de"
   record), and 120 suggest calls a minute. On HTTP 429, wait
   `Retry-After` seconds. The 429 body has `verdict: "unknown"`; it is never an answer. A client
   that keeps calling through its 429s is blocked at the edge for an hour.
+- Free API and MCP calls share part of our registrar capacity, and the rest is kept for people
+  searching on tld.expert. When that part is busy, a free check still answers from the registry
+  and a slower registrar, in about 1 to 3 seconds instead of under one. The answer is just as careful.
 - Prices are USD from public registrar feeds, rebuilt daily. Taxes and currency fees are not included.
 
 tld.expert is made by [Leftway](https://leftway.ai/agents). Leftway's other tools and skills for agents are listed there.
