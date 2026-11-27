@@ -108,10 +108,11 @@ year (checked 2026-10-21). Source: tld.expert/de"
 
 ## Limits
 
-- About 600 availability lookups a minute per client (a name sweep costs one per ending, a single
-  domain one, or two when it is taken and the answer carries its registry record) and 120
-  suggest calls a minute. On HTTP 429, wait
-  `Retry-After` seconds. The 429 body has `verdict: "unknown"`; it is never an answer.
+- 600 availability lookups at once per client, then 60 a minute (a name sweep costs one per
+  ending, a single domain one, or two when it is taken and the answer carries its registry
+  record), and 120 suggest calls a minute. On HTTP 429, wait
+  `Retry-After` seconds. The 429 body has `verdict: "unknown"`; it is never an answer. A client
+  that keeps calling through its 429s is blocked at the edge for an hour.
 - Prices are USD from public registrar feeds, rebuilt daily. Taxes and currency fees are not included.
 
 tld.expert is made by [Leftway](https://leftway.ai/agents). Leftway's other tools and skills for agents are listed there.
